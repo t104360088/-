@@ -23,7 +23,7 @@ public class store_message extends AppCompatActivity {
     private Cursor c;
     private EditText name;
     private MediaPlayer mPlayer;
-    final String[] information = {"地圖位置","商品目錄管理","下單管理","歷史購買紀錄","撥打電話"};
+    final String[] information = {"地圖位置","商品目錄管理","下單管理","歷史購買紀錄","撥打電話", "發表評論"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +126,6 @@ public class store_message extends AppCompatActivity {
                             switch (which)
                             {
                                 case 0:
-
                                     Uri gmmIntentUri = Uri.parse("geo:latitude,longitude?q="+ c.getString(2));
                                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                                     mapIntent.setPackage("com.google.android.apps.maps");
@@ -154,6 +153,12 @@ public class store_message extends AppCompatActivity {
                                     Uri uri = Uri.parse("tel:0"+ c.getString(3));
                                     Intent call = new Intent(Intent.ACTION_DIAL, uri);
                                     startActivity(call);
+                                    break;
+                                case 5:
+                                    Intent intent_go_to_star = new Intent();
+                                    intent_go_to_star.setClass(store_message.this, star.class);
+                                    intent_go_to_star.putExtra("store_name", c.getString(1));
+                                    startActivity(intent_go_to_star);
                                     break;
                             }
                         }
