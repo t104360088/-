@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lulala.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="商店管理系統"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".store_message">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".add_store"
+            android:label="店家管理" />
+        <activity
+            android:name=".table"
+            android:label="商品目錄管理" />
+        <activity
+            android:name=".order"
+            android:label="下單管理" />
+        <activity
+            android:name=".history_show"
+            android:label="歷史購買紀錄" />
+        <activity android:name=".star" />
+        <activity android:name=".add_star"></activity>
+    </application>
+
+</manifest>
